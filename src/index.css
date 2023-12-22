@@ -1,13 +1,302 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 16px;
 }
+
+body {
+  min-height: 100vh;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: #efefef;
+}
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #333;
+}
+
+.Header, .Footer {
+  width: 100%;
+  background-color: #66d8f5;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header h1 {
+  font-size: 1.5rem;
+}
+
+.Footer {
+  padding: 0.75rem;
+  display: grid;
+  place-content: center;
+}
+
+.Nav {
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.searchForm {
+  width: 80%;
+  padding: 1rem 0 0 0.75rem;
+}
+
+.searchForm input[type="text"] {
+  font-family: monospace;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.Nav ul {
+  color: #fff;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-weight: bold;
+}
+
+.Nav li {
+  padding: 1rem;
+}
+
+.Nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Nav li:hover,
+.Nav li:focus,
+.Nav li:hover a,
+.Nav li:focus a {
+  background-color: #eee;
+  color: #333;
+}
+
+.Nav li:hover a,
+.Nav li:focus a {
+  cursor: pointer;
+}
+
+.Home, .About, .Missing, .NewCustomer, .Customer, .EditCustomer {
+  width: 100%;
+  flex-grow: 1;
+  padding: 0.75rem;
+  overflow-y: auto;
+  background-color: #fff;
+  text-align: center;
+}
+
+.viewButton, .editButton, .deleteButton {
+  height: 38px;
+  min-width: 38px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.viewButton {
+  background-color: papayawhip;
+  color: black;
+}
+
+.editButton {
+  background-color: #333;
+}
+
+.deleteButton {
+  background-color: red;
+}
+
+.cancelButton {
+  background-color: blue;
+}
+
+.saveBtn {
+  background-color: green;
+}
+
+.statusMsg {
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 610px) {
+
+  .Header h1 {
+    font-size: 2rem;
+  }
+
+  .Nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+  }
+
+  .Nav ul {
+    text-align: right;
+  }
+
+  .Nav li:hover, 
+  .Nav li:focus, 
+  .Nav li:hover a, 
+  .Nav li:focus a  {
+    background-color: #eee;
+    color: #333;
+  }
+
+  .searchForm {
+    width: 50%;
+    padding: .5rem 0;
+    
+  }
+ 
+  .searchForm input[type="text"] {
+    margin-left: 0.5rem;
+    font-size: 22px;
+  }
+
+  
+}
+
+.tableForm {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.customerTable td {
+  text-align: center;
+  padding: 0.25rem;
+}
+
+.customerTable thead td {
+  font-weight: bold;
+  font-size: 17px;
+  border: 2px solid;
+  border-left: 2px solid;
+  border-top: 0;
+}
+
+.customerTable tbody td {
+  border: 2px solid;
+}
+
+.Missing a:visited {
+  color: #000;
+}
+
+.inputForm button {
+  margin-top: 1rem;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: 2px solid;
+  box-shadow: 1px 1px 1px 0px;
+}
+
+.inputForm { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputGroup label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.inputForm input[type="text"] {
+  font-family: monospace;
+  min-height: 38px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.Customer {
+  padding: 1rem;
+  text-align: center;
+}
+
+.Customer h1 {
+  margin-bottom: 1rem;
+}
+
+.Customer button {
+  margin-top: 0.5rem;
+  height: 48px;
+  min-width: 48px;
+}
+
+.profileSpan {
+  text-decoration: underline 1px;
+  font-weight: 800;
+}
+
+.Customer p {
+  font-size: 20px;
+}
+
+.inputWrap label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.inputWrap label {
+  display: inline-block;
+  width: 250px;
+  text-align: right;
+}
+
+.inputWrap input[type="text"] {
+  width: 300px;
+}
+
+
