@@ -1,0 +1,14 @@
+{
+    "customers": [
+      {
+        "id": "customerId",
+        "name": "customerName",
+        "surname": "customerSurname",
+        "isikukood": "customerIsikukood",
+        "driverLicenseNumber": "customerDriverLicenseNumber",
+        "address": "customerAddress",
+        "email": "customerEmail",
+        "phone": "customerPhone"
+      }
+    ]
+  }
